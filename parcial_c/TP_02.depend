@@ -1,0 +1,184 @@
+# depslib dependency file v1.0
+1558025108 source:c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_arrays.h"
+	"arrayfantasma.h"
+
+1558025108 asma.h"
+
+1558025545 c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\utn_arrays.h
+	"validations.h"
+
+1558025545 ns.h"
+
+1558025545 c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\validations.h
+
+1557857863 c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\arrayfantasma.h
+
+1558025545 source:c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\utn_arrays.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_arrays.h"
+	"validations.h"
+
+1558025545 source:c:\users\brankita\desktop\laboratorio_01_tp_'02\tp_02\validations.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1558025545 
+
+1558046692 source:/home/alumno/Descargas/paraParcial-master/TP_02/informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558035382 /home/alumno/Descargas/paraParcial-master/TP_02/utn.h
+
+1558046138 /home/alumno/Descargas/paraParcial-master/TP_02/orquesta.h
+
+1558048127 source:/home/alumno/Descargas/paraParcial-master/TP_02/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"orquesta.h"
+
+1558048717 source:/home/alumno/Descargas/paraParcial-master/TP_02/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558035382 source:/home/alumno/Descargas/paraParcial-master/TP_02/utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558035382 /home/alumno/Descargas/paraParcial-master/TP_02/fantasma.h
+
+1558052785 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558052785 c:\users\brankita\downloads\parcial_01-master\parcial_01\utn.h
+
+1558375345 c:\users\brankita\downloads\parcial_01-master\parcial_01\orquesta.h
+
+1558379261 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"instrumento.h"
+	"orquesta.h"
+	"musico.h"
+
+1558375345 c:\users\brankita\downloads\parcial_01-master\parcial_01\instrumento.h
+
+1558052785 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+	"instrumento.h"
+
+1558379915 c:\users\brankita\downloads\parcial_01-master\parcial_01\musico.h
+
+1558052785 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+	"instrumento.h"
+
+1558052785 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558052785 c:\users\brankita\downloads\parcial_01-master\parcial_01\fantasma.h
+
+1558379207 source:c:\users\brankita\downloads\parcial_01-master\parcial_01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558393939 source:c:\users\administrator\desktop\parcial_c\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"instrumento.h"
+
+1558052785 c:\users\administrator\desktop\parcial_c\utn.h
+
+1558399364 c:\users\administrator\desktop\parcial_c\instrumento.h
+
+1558052785 source:c:\users\administrator\desktop\parcial_c\utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1558052785 c:\users\administrator\desktop\parcial_c\fantasma.h
+
+1558409747 source:c:\users\administrator\desktop\parcial_c\informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"orquesta.h"
+
+1558415003 c:\users\administrator\desktop\parcial_c\orquesta.h
+	"instrumento.h"
+
+1558415171 c:\users\administrator\desktop\parcial_c\musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558415182 source:c:\users\administrator\desktop\parcial_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+
+1558414952 source:c:\users\administrator\desktop\parcial_c\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+
+1558414865 source:c:\users\administrator\desktop\parcial_c\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+
