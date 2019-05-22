@@ -696,6 +696,205 @@ int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferI
 
 
 
+//FUNCION HARDCODEADA PARA LA ORQUESTA 1, PUEDE SER OTRA.
+
+
+/** \brief Esta funcion calcula la cantidad de musicos y a la vez la Orquesta que mas Musicos tenga.
+ *
+ * \param Musico pMusico Puntero a la estrucura Musico.
+ * \param sizeM Tamaño del array musico.
+ * \return
+ *
+ */
+
+void OrquestaConMayorMusicoYcantidadMusico(Musico *pMusico, int sizeM)
+{
+int contadorMusico1=0;
+int contadorMusico2=0;
+int contadorMusico3=0;
+int bufferMusico1;
+int bufferMusico2;
+int bufferMusico3;
+int maximo=0;
+int maximoFinal;
+int i,j,k;
+int temp;
+
+for(k=0;k<sizeM;k++)
+{
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==1)
+        {
+            contadorMusico1++;
+            continue;
+        }
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==2)
+        {
+            contadorMusico2++;
+            continue;
+        }
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==3)
+        {
+            contadorMusico3++;
+            continue;
+        }
+    else
+        continue;
+}
+
+ bufferMusico1 = contadorMusico1;
+ bufferMusico2 = contadorMusico2;
+ bufferMusico3 = contadorMusico3;
+
+int array[3] = {bufferMusico1,bufferMusico2,bufferMusico3};
+    for(i = 0; i < 3-1; i++){
+        for(j = i+1; j < 3; j++){
+            if(array[i] < array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+  if(bufferMusico1>maximo)
+{
+   //maximo=bufferMusico1;
+   maximoFinal=1;
+
+}
+ else if(bufferMusico2>maximo)
+{
+   // maximo=bufferMusico2;
+    maximoFinal=2;
+}
+ else if(bufferMusico3>maximo)
+{
+   //maximo=bufferMusico3;
+   maximoFinal=3;
+}
+  switch(maximoFinal)
+  {
+    case 1:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Sinfonica\n",maximoFinal);
+        break;
+
+    case 2:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Filarmonica\n",maximoFinal);
+        break;
+
+    case 3:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Camara\n",maximoFinal);
+        break;
+
+    default:
+        break;
+  }
+
+for(j = 0; j<3; j++)
+    {
+        printf("Esta orquesta esta compuesta por %d Musicos\n",array[j]);
+        break;
+    }
+}
+
+
+/** \brief Esta funcion calcula la cantidad de musicos y a la vez la Orquesta que menos Musicos tenga.
+ *
+ * \param Musico pMusico Puntero a la estrucura Musico.
+ * \param sizeM Tamaño del array musico.
+ * \return
+ *
+ */
+
+void OrquestaConMenorMusicoYcantidadMusico(Musico *pMusico, int sizeM)
+{
+int contadorMusico1=0;
+int contadorMusico2=0;
+int contadorMusico3=0;
+int bufferMusico1;
+int bufferMusico2;
+int bufferMusico3;
+int minimo=1;
+int minimoFinal;
+int i,j,k;
+int temp;
+
+for(k=0;k<sizeM;k++)
+{
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==1)
+        {
+            contadorMusico1++;
+            continue;
+        }
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==2)
+        {
+            contadorMusico2++;
+            continue;
+        }
+        if(pMusico[k].isEmpty==0 && pMusico[k].suOrquesta==3)
+        {
+            contadorMusico3++;
+            continue;
+        }
+    else
+        continue;
+}
+
+ bufferMusico1 = contadorMusico1;
+ bufferMusico2 = contadorMusico2;
+ bufferMusico3 = contadorMusico3;
+
+int array[3] = {bufferMusico1,bufferMusico2,bufferMusico3};
+    for(i = 0; i < 3-1; i++){
+        for(j = i+1; j < 3; j++){
+            if(array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+  if(bufferMusico1<=minimo)
+{
+   //maximo=bufferMusico1;
+   minimoFinal=1;
+
+}
+ else if(bufferMusico2<=minimo)
+{
+   // maximo=bufferMusico2;
+    minimoFinal=2;
+}
+ else if(bufferMusico3<=minimo)
+{
+   //maximo=bufferMusico3;
+   minimoFinal=3;
+}
+  switch(minimoFinal)
+  {
+    case 1:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Sinfonica\n",minimoFinal);
+        break;
+
+    case 2:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Filarmonica\n",minimoFinal);
+        break;
+
+    case 3:
+        printf("\nLa orquesta con mas musicos es la de tipo: %d, Camara\n",minimoFinal);
+        break;
+
+    default:
+        break;
+  }
+
+for(j = 0; j<3; j++)
+    {
+        printf("Esta orquesta esta compuesta por %d Musicos\n",array[j]);
+        break;
+    }
+}
 /** \brief Crea musicos hardcodeados.
  *
  * \param Musico pMusico Puntero a la estructura Musico.
@@ -707,6 +906,8 @@ void crearMusicos(Musico *pMusico)
 {
             pMusico[0].isEmpty=0;
             pMusico[0].idMusico=1;
+            pMusico[0].edad=20;
+            pMusico[0].suOrquesta=1;
             pMusico[0].suInstrumento=1;
             strcpy(pMusico[0].nombre,"Rodri");
             strcpy(pMusico[0].apellido,"Barb");
@@ -714,12 +915,16 @@ void crearMusicos(Musico *pMusico)
 
              pMusico[1].isEmpty=0;
             pMusico[1].idMusico=2;
+            pMusico[1].edad=32;
+            pMusico[1].suOrquesta=1;
             pMusico[1].suInstrumento=2;
             strcpy(pMusico[1].nombre,"Sergio");
             strcpy(pMusico[1].apellido,"Fafa");
 
              pMusico[2].isEmpty=0;
             pMusico[2].idMusico=3;
+            pMusico[2].edad=42;
+            pMusico[2].suOrquesta=1;
             pMusico[2].suInstrumento=3;
             strcpy(pMusico[2].nombre,"Michel");
             strcpy(pMusico[2].apellido,"Sans");
@@ -727,12 +932,16 @@ void crearMusicos(Musico *pMusico)
 
              pMusico[3].isEmpty=0;
             pMusico[3].idMusico=4;
+            pMusico[3].edad=31;
+            pMusico[3].suOrquesta=2;
             pMusico[3].suInstrumento=1;
             strcpy(pMusico[3].nombre,"Gordo");
             strcpy(pMusico[3].apellido,"Toni");
 
              pMusico[4].isEmpty=0;
             pMusico[4].idMusico=5;
+            pMusico[4].edad=15;
+            pMusico[4].suOrquesta=3;
             pMusico[4].suInstrumento=2;
             strcpy(pMusico[4].nombre,"Flaco");
             strcpy(pMusico[4].apellido,"Tatoh");
@@ -762,10 +971,10 @@ void crearOrquesta(Orquesta *pOrquesta)
 
 void crearInstrumentos(Instrumento *pInstrumento)
 {
-
+//INSTRUMENTO1 HAY 2   INSTRUMENTO2 HAY 1     INSTRUMENTO3 HAY  2   INSTRUMENTO4 HAY 5
             pInstrumento[0].isEmpty=0;
             pInstrumento[0].idInstrumento=1;
-            pInstrumento[0].instrumento=1;
+            pInstrumento[0].instrumento=2;
             strcpy(pInstrumento[0].nombreInstrumento,"lola");
 
             pInstrumento[1].isEmpty=0;
@@ -775,18 +984,43 @@ void crearInstrumentos(Instrumento *pInstrumento)
 
             pInstrumento[2].isEmpty=0;
             pInstrumento[2].idInstrumento=3;
-            pInstrumento[2].instrumento=2;
+            pInstrumento[2].instrumento=1;
             strcpy(pInstrumento[0].nombreInstrumento,"tita");
 
             pInstrumento[3].isEmpty=0;
             pInstrumento[3].idInstrumento=4;
-            pInstrumento[3].instrumento=3;
+            pInstrumento[3].instrumento=4;
             strcpy(pInstrumento[3].nombreInstrumento,"rora");
 
             pInstrumento[4].isEmpty=0;
             pInstrumento[4].idInstrumento=5;
             pInstrumento[4].instrumento=4;
             strcpy(pInstrumento[4].nombreInstrumento,"saerasa");
+
+            pInstrumento[5].isEmpty=0;
+            pInstrumento[5].idInstrumento=6;
+            pInstrumento[5].instrumento=4;
+            strcpy(pInstrumento[5].nombreInstrumento,"instrumentoh");
+
+            pInstrumento[6].isEmpty=0;
+            pInstrumento[6].idInstrumento=7;
+            pInstrumento[6].instrumento=4;
+            strcpy(pInstrumento[6].nombreInstrumento,"hola");
+
+            pInstrumento[7].isEmpty=0;
+            pInstrumento[7].idInstrumento=8;
+            pInstrumento[7].instrumento=4;
+            strcpy(pInstrumento[4].nombreInstrumento,"chau");
+
+            pInstrumento[8].isEmpty=0;
+            pInstrumento[8].idInstrumento=9;
+            pInstrumento[8].instrumento=3;
+            strcpy(pInstrumento[8].nombreInstrumento,"bueni");
+
+            pInstrumento[9].isEmpty=0;
+            pInstrumento[9].idInstrumento=10;
+            pInstrumento[9].instrumento=3;
+            strcpy(pInstrumento[9].nombreInstrumento,"dale");
 
 }
 

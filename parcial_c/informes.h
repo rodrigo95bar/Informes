@@ -19,6 +19,7 @@ void crearMusicos(Musico *pMusico);
 void crearOrquesta(Orquesta *pOrquesta);
 void crearInstrumentos(Instrumento *pInstrumento);
 
-
+void OrquestaConMayorMusicoYcantidadMusico(Musico *pMusico, int sizeM);
+void OrquestaConMenorMusicoYcantidadMusico(Musico *pMusico, int sizeM);
 //void nombreMasLargo(int size);
 #endif // INFORMES_H_INCLUDED

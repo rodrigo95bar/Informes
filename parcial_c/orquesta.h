@@ -21,6 +21,7 @@ typedef struct
 int orquesta_Inicializar(Orquesta *pOrquesta, int size);
 int orquesta_buscarEmpty(Orquesta *pOrquesta, int size, int* posicion);
 int orquesta_buscarID(Orquesta *pOrquesta, int size, int valorBuscado, int* posicion);
+int orquesta_buscarTipo(Orquesta *pOrquesta, int size, int valorBuscado, int* posicion);
 int orquesta_buscarInt(Orquesta *pOrquesta, int size, int valorBuscado, int* posicion);
 int orquesta_buscarString(Orquesta *pOrquesta, int size, char* valorBuscado, int* indice);
 int musico_buscarIDorquesta(Orquesta *pOrquesta, int size, int valorBuscado, int* posicion);

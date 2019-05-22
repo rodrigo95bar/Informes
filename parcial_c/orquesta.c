@@ -81,6 +81,34 @@ int orquesta_buscarID(Orquesta *pOrquesta, int size, int valorBuscado, int* posi
     }
     return retorno;
 }
+/** \brief Busca un ID en el Array de Orquesta y devuelve la posicion en que se encuentra.
+* \param Orquesta pOrquesta Puntero a la estructura Orquesta.
+* \param size Tamaño del array.
+* \param posicion Puntero a la posicion del array Orquesta donde se encuentra el valor buscado
+* \return int Return (-1) si no encuentra el valor buscado o Error [Tamaño invalido o puntero NULL] - (0) si encuentra el valor buscado
+*
+*/
+int orquesta_buscarTipoO(Orquesta *pOrquesta, int size, int valorBuscado, int* posicion)
+{
+    int retorno=-1;
+    int i;
+    if(pOrquesta!= NULL && size>=0)
+    {
+        for(i=0;i<size;i++)
+        {
+            if(pOrquesta[i].isEmpty==1)
+                continue;
+            else if(pOrquesta[i].tipoOrquesta==valorBuscado)
+            {
+                retorno=0;
+                *posicion=i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
 
 /** \brief Busca un int en el array de Orquesta y devuelve la posicion en que se encuentra
 * \param Orquesta pOrquesta Puntero a la estructura Orquesta.
