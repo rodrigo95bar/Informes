@@ -25,7 +25,7 @@ int main()
 
     crearMusicos(pMusico);
     crearOrquesta(pOrquesta);
-
+    crearInstrumentos(pInstrumento);
     do
     {
         utn_getUnsignedInt("\n\n1) Agregar Orquesta\n2) Eliminar Orquesta \n3) Imprimir orquesta \n4) Agregar Musico \n5) Modificar musico \n6) Eliminar Musico\n7) Imprimir musicos\n8) Agregar instrumentos\n9) Imprimir instrumentos\n",                   //cambiar
@@ -68,7 +68,8 @@ int main()
                     break;
 
              case 9:
-                 promedioInstrumentoDeTipo(pInstrumento,CANT_INSTRUMENTO);
+                 instrumentoMasUsado(pInstrumento, CANT_INSTRUMENTO);
+                 //promedioInstrumentoDeTipo(pInstrumento,CANT_INSTRUMENTO);
                  //promedioTotalMusicoOrquesta(pMusico,pOrquesta,CANT_MUSICO,CANT_ORQUESTA);
                  //instrumento_listar(pInstrumento,CANT_INSTRUMENTO);
                     break;

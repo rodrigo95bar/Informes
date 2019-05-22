@@ -13,11 +13,11 @@ void ordenar_numerosMenorAmayor(Musico *pMusico, int TAM);
 void promedioTotalMusicoOrquesta(Musico *pMusico,Orquesta *pOrquesta,int sizeM,int sizeO);
 void promedioInstrumentoDeTipo(Instrumento *pInstrumento,int size);
 
-
-
+void instrumentoMasUsado(Instrumento *pInstrumento, int size);
+void instrumentoMenosUsado(Instrumento *pInstrumento, int size);
 void crearMusicos(Musico *pMusico);
 void crearOrquesta(Orquesta *pOrquesta);
-
+void crearInstrumentos(Instrumento *pInstrumento);
 
 
 //void nombreMasLargo(int size);

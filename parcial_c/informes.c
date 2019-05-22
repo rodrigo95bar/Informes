@@ -544,13 +544,164 @@ printf("\n La cantidad de Instrumentos de tipo 1 es: %d\n La cantidad de Instrum
 
 
 
+
+
+/** \brief Determina el instrumento mas usado a traves del ordenamiento mayor a menor, solo mostrando el numero mas grande.
+ *
+ * \param Instrumento pInstrumento Puntero a la estructura Instrumento
+ * \param size Tamaño array de Instrumento
+ * \return
+ *
+ */
+
+void instrumentoMasUsado(Instrumento *pInstrumento, int size)
+{
+int temp;
+int i;
+int j,k;
+
+int contadorInstrumento1;
+int contadorInstrumento2;
+int contadorInstrumento3;
+int contadorInstrumento4;
+int bufferInstrumento1;
+int bufferInstrumento2;
+int bufferInstrumento3;
+int bufferInstrumento4;
+
+for(k=0; k<size;k++)
+{
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==1)
+    {
+        contadorInstrumento1++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==2)
+    {
+        contadorInstrumento2++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==3)
+    {
+        contadorInstrumento3++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==4)
+    {
+        contadorInstrumento4++;
+        continue;
+    }
+    else
+        continue;
+}
+
+ bufferInstrumento1 = contadorInstrumento1;
+ bufferInstrumento2 = contadorInstrumento2;
+ bufferInstrumento3 = contadorInstrumento3;
+ bufferInstrumento4 = contadorInstrumento4;
+
+int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferInstrumento4};
+    for(i = 0; i < 4-1; i++){
+        for(j = i+1; j < 4; j++){
+            if(array[i] < array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+
+  for(int j = 0; j<4; j++){
+        printf("El instrumento mas usado es de tipo: %d\n",array[j]);
+        break;
+    }
+}
+
+
+
+/** \brief Determina el instrumento menos usado a traves del ordenamiento menor a mayor, solo mostrando el numero mas pequeño.
+ *
+ * \param Instrumento pInstrumento Puntero a la estructura Instrumento
+ * \param size Tamaño array de Instrumento
+ * \return
+ *
+ */
+
+void instrumentoMenosUsado(Instrumento *pInstrumento, int size)
+{
+int temp;
+int i;
+int j,k;
+
+int contadorInstrumento1;
+int contadorInstrumento2;
+int contadorInstrumento3;
+int contadorInstrumento4;
+int bufferInstrumento1;
+int bufferInstrumento2;
+int bufferInstrumento3;
+int bufferInstrumento4;
+
+for(k=0; k<size;k++)
+{
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==1)
+    {
+        contadorInstrumento1++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==2)
+    {
+        contadorInstrumento2++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==3)
+    {
+        contadorInstrumento3++;
+        continue;
+    }
+    if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==4)
+    {
+        contadorInstrumento4++;
+        continue;
+    }
+    else
+        continue;
+}
+
+ bufferInstrumento1 = contadorInstrumento1;
+ bufferInstrumento2 = contadorInstrumento2;
+ bufferInstrumento3 = contadorInstrumento3;
+ bufferInstrumento4 = contadorInstrumento4;
+
+int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferInstrumento4};
+    for(i = 0; i < 4-1; i++){
+        for(j = i+1; j < 4; j++){
+            if(array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+
+  for(int j = 0; j<4; j++){
+        printf("El instrumento mas usado es de tipo: %d\n",array[j]);
+        break;
+    }
+}
+
+
+
 /** \brief Crea musicos hardcodeados.
  *
  * \param Musico pMusico Puntero a la estructura Musico.
  * \return
  *
  */
-
 
 void crearMusicos(Musico *pMusico)
 {
@@ -608,3 +759,35 @@ void crearOrquesta(Orquesta *pOrquesta)
             strcpy(pOrquesta[1].nombre,"ta");
             strcpy(pOrquesta[1].lugar,"za");
 }
+
+void crearInstrumentos(Instrumento *pInstrumento)
+{
+
+            pInstrumento[0].isEmpty=0;
+            pInstrumento[0].idInstrumento=1;
+            pInstrumento[0].instrumento=1;
+            strcpy(pInstrumento[0].nombreInstrumento,"lola");
+
+            pInstrumento[1].isEmpty=0;
+            pInstrumento[1].idInstrumento=2;
+            pInstrumento[1].instrumento=1;
+            strcpy(pInstrumento[1].nombreInstrumento,"fasa");
+
+            pInstrumento[2].isEmpty=0;
+            pInstrumento[2].idInstrumento=3;
+            pInstrumento[2].instrumento=2;
+            strcpy(pInstrumento[0].nombreInstrumento,"tita");
+
+            pInstrumento[3].isEmpty=0;
+            pInstrumento[3].idInstrumento=4;
+            pInstrumento[3].instrumento=3;
+            strcpy(pInstrumento[3].nombreInstrumento,"rora");
+
+            pInstrumento[4].isEmpty=0;
+            pInstrumento[4].idInstrumento=5;
+            pInstrumento[4].instrumento=4;
+            strcpy(pInstrumento[4].nombreInstrumento,"saerasa");
+
+}
+
+
