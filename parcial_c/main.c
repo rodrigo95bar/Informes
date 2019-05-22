@@ -26,6 +26,8 @@ int main()
     crearMusicos(pMusico);
     crearOrquesta(pOrquesta);
     crearInstrumentos(pInstrumento);
+
+    saludoMenu();
     do
     {
         utn_getUnsignedInt("\n\n1) Agregar Orquesta\n2) Eliminar Orquesta \n3) Imprimir orquesta \n4) Agregar Musico \n5) Modificar musico \n6) Eliminar Musico\n7) Imprimir musicos\n8) Agregar instrumentos\n9) Imprimir instrumentos\n",                   //cambiar
@@ -68,10 +70,14 @@ int main()
                     break;
 
              case 9:
+                 informe_sortOrquestaNombreYtipo(pOrquesta,CANT_ORQUESTA,1);
+                 //informe_sortNombreMusico(pMusico,CANT_MUSICO,1);
+                 //ordenar_cadenas(pMusico,CANT_MUSICO);
+                 //ordenar_numerosMayorAmenor(pMusico,CANT_MUSICO);
                  //OrquestaConMenorMusicoYcantidadMusico(pMusico, CANT_MUSICO);
                  //OrquestaConMayorMusicoYcantidadMusico(pMusico,CANT_MUSICO);
                  //instrumentoMasUsado(pInstrumento, CANT_INSTRUMENTO);
-                 instrumentoMenosUsado(pInstrumento,CANT_INSTRUMENTO);
+                 //instrumentoMenosUsado(pInstrumento,CANT_INSTRUMENTO);
                  //promedioInstrumentoDeTipo(pInstrumento,CANT_INSTRUMENTO);
                  //promedioTotalMusicoOrquesta(pMusico,pOrquesta,CANT_MUSICO,CANT_ORQUESTA);
                  //instrumento_listar(pInstrumento,CANT_INSTRUMENTO);

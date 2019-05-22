@@ -244,6 +244,18 @@ int Informes_listarAuxiliarOrdenar(Fantasma arrayA[], Fantasma arrayB[], int siz
 }
 */
 
+/** \brief Bienvenida del abm.
+ *
+ * \return void.
+ *
+ */
+
+void saludoMenu()
+{
+printf("\n\t \\\\\\\\BIENVENIDO AL MENU ABM/////// \t\n");
+printf("\n\t Indique una opcion del menu (Numeros entre 1 y 10)\t\n");
+}
+
 /** \brief Busca un valor y lista los elementos de dos arrays vinculados
 * \param arrayA Fantasma Array de Fantasma
 * \param arrayB Fantasma Array de Fantasma
@@ -375,6 +387,42 @@ return 0;
 
 */
 
+/** \brief Ordena de mayor a menor Numeros.
+ *
+ * \param Musico pMusico Puntero a la estructura Musico.
+ * \param TAM Tamaño del array.
+ * \return void.
+ *
+ */
+
+
+
+
+void ordenar_cadenas(Musico *pMusico, int TAM)
+{
+   char temp[20];
+   int i,j;
+
+   for(i=0; i < TAM-1; i++)
+   {
+      for(j=i+1; j < TAM; j++)
+      if(strcmp(pMusico[i].nombre, pMusico[j].nombre) > 0)
+      {
+
+         strcpy(temp, pMusico[i].nombre);
+         strcpy(pMusico[i].nombre, pMusico[j].nombre);
+         strcpy(pMusico[j].nombre, temp);
+      }
+   }
+   printf("\n\tORDENADO!\t\n");
+    for(int j = 0; j<TAM; j++){
+            if(pMusico[j].isEmpty==1)
+            continue;
+    else
+        printf("\n%s\n",pMusico[j].nombre);
+    }
+}
+
 
 
 /** \brief Ordena de mayor a menor Numeros.
@@ -401,6 +449,7 @@ int temp;
             }
         }
     }
+    printf("\n\tORDENADO!\t\n");
     for(int j = 0; j<TAM; j++){
             if(pMusico[j].isEmpty==1)
             continue;
@@ -1029,6 +1078,46 @@ for(j = 0; j<3; j++)
  *
  */
 
+/** \brief Promedia y suma la edad de todos los Musicos.
+ *
+ * \param Musico pMusico Puntero a la estructura Musico.
+ * \param len Tamaño del array.
+ * \return
+ *
+ */
+
+ void informe_cantidadTotalPromedioEdadesDeMusico(Musico* pMusico,int len)
+{
+    int i;
+    int acumulador = 0;
+    int contador = 0;
+    float promedio;
+
+    if(pMusico != NULL && len > 0)
+    {
+        for(i=0;i<len;i++)
+        {
+            if(pMusico[i].isEmpty == 0)
+            {
+                acumulador+=pMusico[i].edad;
+                contador++;
+            }
+        }
+
+    promedio = acumulador / contador;
+
+    printf("\nEl total de musicos es: %d\n",contador);
+    printf("La suma de las edades es: %d",acumulador);
+    printf("El promedio entre las edades de musicos es: %.2f",promedio);
+    }
+
+}
+
+
+
+
+
+
 void crearMusicos(Musico *pMusico)
 {
             pMusico[0].isEmpty=0;
@@ -1152,3 +1241,149 @@ void crearInstrumentos(Instrumento *pInstrumento)
 }
 
 
+
+int informe_sortNombreMusico(Musico *pMusico,int len,int ordenamiento)  // EL ASCENDENTE ES 1 Y EL DESCENDENTE ES EL 0
+{
+    int i;
+    int j;
+    Musico buffer;
+    int ret = -1;
+    if(pMusico != NULL && len > 0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+            for(j=i+1;j<len;j++)
+            {
+                if(ordenamiento == 1 && (strcmp(pMusico[j].nombre,pMusico[i].nombre) < 0))
+                {
+                    buffer = pMusico[i];
+                    pMusico[i] = pMusico[j];
+                    pMusico[j] = buffer;
+                    ret = 0;
+                }
+                else if(ordenamiento == 0 && (strcmp(pMusico[j].nombre,pMusico[i].nombre) > 0))
+                {
+                    buffer = pMusico[i];
+                    pMusico[i] = pMusico[j];
+                    pMusico[j] = buffer;
+                    ret = 0;
+                }
+
+            }
+        }
+        for(int j = 0; j<len; j++){
+            if(pMusico[j].isEmpty==1)
+            continue;
+    else
+        printf("\n%s\n",pMusico[j].nombre);
+    }
+    }
+    return ret;
+}
+
+/** \brief Ordena los Musicos por apellido, de forma ascendente o descendente.
+ *
+ * \param Musico pMusico Puntero a la estructura Orquesta.
+ * \param len Tamaño del array Orquesta.
+ * \param ordenamiento Numero de tipo INT que determina la clase de ordenamiento.
+ * \return Retorna 0 si esta bien y ordenado, -1 si se detecta error.
+ *
+ */
+int informe_sortApellidoMusico(Musico *pMusico,int len,int ordenamiento)  // EL ASCENDENTE ES 1 Y EL DESCENDENTE ES EL 0
+{
+    int i;
+    int j;
+    Musico buffer;
+    int ret = -1;
+    if(pMusico != NULL && len > 0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+            for(j=i+1;j<len;j++)
+            {
+                if(ordenamiento == 1 && (strcmp(pMusico[j].apellido,pMusico[i].apellido) < 0))
+                {
+                    buffer = pMusico[i];
+                    pMusico[i] = pMusico[j];
+                    pMusico[j] = buffer;
+                    ret = 0;
+                }
+                else if(ordenamiento == 0 && (strcmp(pMusico[j].apellido,pMusico[i].apellido) > 0))
+                {
+                    buffer = pMusico[i];
+                    pMusico[i] = pMusico[j];
+                    pMusico[j] = buffer;
+                    ret = 0;
+                }
+
+            }
+        }
+        for(int j = 0; j<len; j++){
+            if(pMusico[j].isEmpty==1)
+            continue;
+    else
+        printf("\n%s\n",pMusico[j].apellido);
+    }
+    }
+    return ret;
+}
+
+/** \brief Ordena las Orquestas por nombre y tipo, de forma ascendente o descendente.
+ *
+ * \param Orquesta pOrquesta Puntero a la estructura Orquesta.
+ * \param len Tamaño del array Orquesta.
+ * \param ordenamiento Numero de tipo INT que determina la clase de ordenamiento.
+ * \return Retorna 0 si esta bien y ordenado, -1 si se detecta error.
+ *
+ */
+
+
+int informe_sortOrquestaNombreYtipo(Orquesta* pOrquesta,int len,int ordenamiento)
+{
+    int i;
+    int j;
+    Orquesta buffer;
+    int ret = -1;
+
+    if(pOrquesta != NULL && len > 0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+            for(j=i+1;j<len;j++)
+            {
+                if(ordenamiento == 1 && (strcmp(pOrquesta[j].nombre,pOrquesta[i].nombre) < 0))
+                {
+                    buffer = pOrquesta[i];
+                    pOrquesta[i] = pOrquesta[j];
+                    pOrquesta[j] = buffer;
+                    ret = 0;
+                }
+                else if(ordenamiento == 0 && (strcmp(pOrquesta[j].nombre,pOrquesta[i].nombre) > 0))
+                {
+                    buffer = pOrquesta[i];
+                    pOrquesta[i] = pOrquesta[j];
+                    pOrquesta[j] = buffer;
+                    ret = 0;
+                }
+                else if(strcmp(pOrquesta[j].nombre,pOrquesta[i].nombre) == 0)
+                {
+                    if(pOrquesta[i].tipoOrquesta > pOrquesta[j].tipoOrquesta)
+                    {
+                        buffer = pOrquesta[i];
+                        pOrquesta[i] = pOrquesta[j];
+                        pOrquesta[j] = buffer;
+                        ret = 0;
+                    }
+                }
+            }
+        }
+       for(int j = 0; j<len; j++){
+            if(pOrquesta[j].isEmpty==1)
+            continue;
+       else
+        printf("\nNombre de Orquesta: %s\n Tipo de Orquesta: %d ",pOrquesta[j].nombre,pOrquesta[j].tipoOrquesta);
+    }
+    }
+
+    return ret;
+}
