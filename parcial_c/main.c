@@ -68,10 +68,10 @@ int main()
                     break;
 
              case 9:
-                 OrquestaConMenorMusicoYcantidadMusico(pMusico, CANT_MUSICO);
+                 //OrquestaConMenorMusicoYcantidadMusico(pMusico, CANT_MUSICO);
                  //OrquestaConMayorMusicoYcantidadMusico(pMusico,CANT_MUSICO);
                  //instrumentoMasUsado(pInstrumento, CANT_INSTRUMENTO);
-                 //instrumentoMenosUsado(pInstrumento,CANT_INSTRUMENTO);
+                 instrumentoMenosUsado(pInstrumento,CANT_INSTRUMENTO);
                  //promedioInstrumentoDeTipo(pInstrumento,CANT_INSTRUMENTO);
                  //promedioTotalMusicoOrquesta(pMusico,pOrquesta,CANT_MUSICO,CANT_ORQUESTA);
                  //instrumento_listar(pInstrumento,CANT_INSTRUMENTO);

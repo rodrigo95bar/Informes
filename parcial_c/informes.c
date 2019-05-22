@@ -560,15 +560,16 @@ int temp;
 int i;
 int j,k;
 
-int contadorInstrumento1;
-int contadorInstrumento2;
-int contadorInstrumento3;
-int contadorInstrumento4;
+int contadorInstrumento1=0;
+int contadorInstrumento2=0;
+int contadorInstrumento3=0;
+int contadorInstrumento4=0;
 int bufferInstrumento1;
 int bufferInstrumento2;
 int bufferInstrumento3;
 int bufferInstrumento4;
-
+int maximo=0;
+int maximoFinal;
 for(k=0; k<size;k++)
 {
     if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==1)
@@ -600,6 +601,36 @@ for(k=0; k<size;k++)
  bufferInstrumento3 = contadorInstrumento3;
  bufferInstrumento4 = contadorInstrumento4;
 
+
+  if(bufferInstrumento1>maximo)
+{
+
+    maximo=bufferInstrumento1;
+   //maximo=bufferMusico1;
+   maximoFinal=1;
+
+}
+ if(bufferInstrumento2>maximo)
+{
+    maximo=bufferInstrumento2;
+   // maximo=bufferMusico2;
+    maximoFinal=2;
+}
+ if(bufferInstrumento3>maximo)
+{
+    maximo=bufferInstrumento3;
+   //maximo=bufferMusico3;
+   maximoFinal=3;
+}
+
+if(bufferInstrumento4>maximo)
+{
+    maximo=bufferInstrumento4;
+   //maximo=bufferMusico3;
+   maximoFinal=4;
+}
+
+
 int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferInstrumento4};
     for(i = 0; i < 4-1; i++){
         for(j = i+1; j < 4; j++){
@@ -613,8 +644,35 @@ int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferI
     }
 
 
+
+  switch(maximoFinal)
+  {
+    case 1:
+        printf("\nEl instrumento mas utiliazado es de tipo: %d, Cuerdas\n",maximoFinal);
+        break;
+
+    case 2:
+        printf("\nEl instrumento mas utiliazado es de tipo: %d, Viento Madera\n",maximoFinal);
+        break;
+
+    case 3:
+        printf("\nEl instrumento mas utiliazado es de tipo:: %d, Viento Metal\n",maximoFinal);
+        break;
+
+    case 4:
+        printf("\nEl instrumento mas utiliazado es de tipo: %d, Percusion\n",maximoFinal);
+        break;
+
+    default:
+        break;
+  }
+
+
+
+
+
   for(int j = 0; j<4; j++){
-        printf("El instrumento mas usado es de tipo: %d\n",array[j]);
+        printf("\nLa cantidad total del instrumento mas utilizado es: %d\n",array[j]);
         break;
     }
 }
@@ -643,7 +701,8 @@ int bufferInstrumento1;
 int bufferInstrumento2;
 int bufferInstrumento3;
 int bufferInstrumento4;
-
+int minimo=1;
+int minimoFinal;
 for(k=0; k<size;k++)
 {
     if(pInstrumento[k].isEmpty==0 && pInstrumento[k].instrumento==1)
@@ -675,6 +734,36 @@ for(k=0; k<size;k++)
  bufferInstrumento3 = contadorInstrumento3;
  bufferInstrumento4 = contadorInstrumento4;
 
+
+ if(bufferInstrumento1<=minimo)
+{
+    minimo=bufferInstrumento1;
+   //maximo=bufferMusico1;
+    minimoFinal=1;
+
+}
+ if(bufferInstrumento2<=minimo)
+{
+    minimo=bufferInstrumento2;
+   // maximo=bufferMusico2;
+    minimoFinal=2;
+}
+ if(bufferInstrumento3<=minimo)
+{
+    minimo=bufferInstrumento3;
+   //maximo=bufferMusico3;
+   minimoFinal=3;
+}
+
+if(bufferInstrumento4<=minimo)
+{
+    minimo=bufferInstrumento4;
+   //maximo=bufferMusico3;
+   minimoFinal=4;
+}
+
+
+
 int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferInstrumento4};
     for(i = 0; i < 4-1; i++){
         for(j = i+1; j < 4; j++){
@@ -688,8 +777,38 @@ int array[4] = {bufferInstrumento1,bufferInstrumento2,bufferInstrumento3,bufferI
     }
 
 
+  switch(minimoFinal)
+  {
+    case 1:
+        if(minimoFinal==1){
+        printf("\nEste instrumento es de tipo: 1)Cuerdas\n");
+        }
+        break;
+
+    case 2:
+        if(minimoFinal==2){
+        printf("\nEste instrumento es de tipo: 2)Viento Madera\n");
+        }
+        break;
+
+    case 3:
+        if(minimoFinal==3){
+        printf("\nEste instrumento es de tipo: 3)Viento Metal\n");
+        }
+        break;
+
+    case 4:
+        if(minimoFinal==4){
+        printf("\nEste instrumento es de tipo: 4)Percusion\n");
+        }
+        break;
+    default:
+        break;
+  }
+
+
   for(int j = 0; j<4; j++){
-        printf("El instrumento mas usado es de tipo: %d\n",array[j]);
+        printf("La cantidad de este instrumento es de: %d\n",array[j]);
         break;
     }
 }
@@ -716,7 +835,7 @@ int bufferMusico1;
 int bufferMusico2;
 int bufferMusico3;
 int maximo=0;
-int maximoFinal;
+int maximoFinal=0;
 int i,j,k;
 int temp;
 
@@ -758,32 +877,40 @@ int array[3] = {bufferMusico1,bufferMusico2,bufferMusico3};
     }
   if(bufferMusico1>maximo)
 {
-   //maximo=bufferMusico1;
+   maximo=bufferMusico1;
    maximoFinal=1;
 
 }
- else if(bufferMusico2>maximo)
+ if(bufferMusico2>maximo)
 {
-   // maximo=bufferMusico2;
+   maximo=bufferMusico2;
     maximoFinal=2;
 }
- else if(bufferMusico3>maximo)
+if(bufferMusico3>maximo)
 {
-   //maximo=bufferMusico3;
+   maximo=bufferMusico3;
    maximoFinal=3;
 }
   switch(maximoFinal)
   {
     case 1:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Sinfonica\n",maximoFinal);
+        if(maximoFinal==1){
+        printf("\nLa orquesta con mas musicos es la de tipo: 1)Sinfonica\n");
+        }
         break;
 
     case 2:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Filarmonica\n",maximoFinal);
+        if(maximoFinal==2){
+        printf("\nLa orquesta con mas musicos es la de tipo: 2)Filarmonica\n");
+
+
+        }
         break;
 
     case 3:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Camara\n",maximoFinal);
+        if(maximoFinal==3){
+        printf("\nLa orquesta con mas musicos es la de tipo: 3)Camara\n");
+        }
         break;
 
     default:
@@ -857,32 +984,32 @@ int array[3] = {bufferMusico1,bufferMusico2,bufferMusico3};
     }
   if(bufferMusico1<=minimo)
 {
-   //maximo=bufferMusico1;
+  minimo=bufferMusico1;
    minimoFinal=1;
 
 }
- else if(bufferMusico2<=minimo)
+ if(bufferMusico2<=minimo)
 {
-   // maximo=bufferMusico2;
+    minimo=bufferMusico2;
     minimoFinal=2;
 }
- else if(bufferMusico3<=minimo)
+  if(bufferMusico3<=minimo)
 {
-   //maximo=bufferMusico3;
+   minimo=bufferMusico3;
    minimoFinal=3;
 }
   switch(minimoFinal)
   {
     case 1:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Sinfonica\n",minimoFinal);
+        printf("\nLa orquesta con menos musicos es la de tipo: %d, Sinfonica\n",minimoFinal);
         break;
 
     case 2:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Filarmonica\n",minimoFinal);
+        printf("\nLa orquesta con menos musicos es la de tipo: %d, Filarmonica\n",minimoFinal);
         break;
 
     case 3:
-        printf("\nLa orquesta con mas musicos es la de tipo: %d, Camara\n",minimoFinal);
+        printf("\nLa orquesta con menos musicos es la de tipo: %d, Camara\n",minimoFinal);
         break;
 
     default:
@@ -916,7 +1043,7 @@ void crearMusicos(Musico *pMusico)
              pMusico[1].isEmpty=0;
             pMusico[1].idMusico=2;
             pMusico[1].edad=32;
-            pMusico[1].suOrquesta=1;
+            pMusico[1].suOrquesta=2;
             pMusico[1].suInstrumento=2;
             strcpy(pMusico[1].nombre,"Sergio");
             strcpy(pMusico[1].apellido,"Fafa");
@@ -924,7 +1051,7 @@ void crearMusicos(Musico *pMusico)
              pMusico[2].isEmpty=0;
             pMusico[2].idMusico=3;
             pMusico[2].edad=42;
-            pMusico[2].suOrquesta=1;
+            pMusico[2].suOrquesta=2;
             pMusico[2].suInstrumento=3;
             strcpy(pMusico[2].nombre,"Michel");
             strcpy(pMusico[2].apellido,"Sans");
@@ -985,7 +1112,7 @@ void crearInstrumentos(Instrumento *pInstrumento)
             pInstrumento[2].isEmpty=0;
             pInstrumento[2].idInstrumento=3;
             pInstrumento[2].instrumento=1;
-            strcpy(pInstrumento[0].nombreInstrumento,"tita");
+            strcpy(pInstrumento[2].nombreInstrumento,"tita");
 
             pInstrumento[3].isEmpty=0;
             pInstrumento[3].idInstrumento=4;
@@ -1010,7 +1137,7 @@ void crearInstrumentos(Instrumento *pInstrumento)
             pInstrumento[7].isEmpty=0;
             pInstrumento[7].idInstrumento=8;
             pInstrumento[7].instrumento=4;
-            strcpy(pInstrumento[4].nombreInstrumento,"chau");
+            strcpy(pInstrumento[7].nombreInstrumento,"chau");
 
             pInstrumento[8].isEmpty=0;
             pInstrumento[8].idInstrumento=9;
