@@ -1241,7 +1241,14 @@ void crearInstrumentos(Instrumento *pInstrumento)
 }
 
 
-
+/** \brief Ordena los Musicos por nombre, de forma ascendente o descendente.
+ *
+ * \param Musico pMusico Puntero a la estructura Orquesta.
+ * \param len Tamaño del array Orquesta.
+ * \param ordenamiento Numero de tipo INT que determina la clase de ordenamiento.
+ * \return Retorna 0 si esta bien y ordenado, -1 si se detecta error.
+ *
+ */
 int informe_sortNombreMusico(Musico *pMusico,int len,int ordenamiento)  // EL ASCENDENTE ES 1 Y EL DESCENDENTE ES EL 0
 {
     int i;

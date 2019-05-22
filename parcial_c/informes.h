@@ -27,6 +27,8 @@ void OrquestaConMenorMusicoYcantidadMusico(Musico *pMusico, int sizeM);
 
 int informe_sortNombreMusico(Musico *pMusico,int len,int ordenamiento);
 int informe_sortApellidoMusico(Musico *pMusico,int len,int ordenamiento);
+
+
 int informe_sortOrquestaNombreYtipo(Orquesta* pOrquesta,int len,int ordenamiento);
 //void nombreMasLargo(int size);
 #endif // INFORMES_H_INCLUDED
